@@ -1,0 +1,31 @@
+.itemss p{
+    background-color: green;
+    margin: 10px;
+    color: white;
+    margin-left: 15px;
+}
+
+.itemss{
+    display: flex;
+    flex-direction: row;
+    background-color: green;
+    align-items: center;
+    width: 30vmax;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+.loader{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30vmin;
+    right: 0px;
+    left: 0px;
+}
+
+.iconButton{
+    cursor: pointer;
+}

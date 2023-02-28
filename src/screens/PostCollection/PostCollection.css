@@ -1,0 +1,51 @@
+.formData{
+   /* background-color: black; */
+   /* padding-left: 150px; */
+  width: 80vmax;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1vmax;
+  padding-top: 1vmax;
+  margin-bottom: 2vmax;
+}
+
+.input1 input{
+    width: 50vmax;
+    height: 35px;
+}
+
+.input1{
+    margin-right: 40px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+
+.myDroDown{
+    background-color: red;
+    width: 30vmax;
+}
+
+.submitbutton1 {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    /* padding: 5px 200px; */
+    display: flex;
+    align-self: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 40vmax;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 2vmax;
+    margin-bottom: 1vmax;
+    margin-right: 4vmax ; 
+  }
+
+
+

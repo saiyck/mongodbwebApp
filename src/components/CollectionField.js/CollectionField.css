@@ -1,0 +1,59 @@
+.dropdown button{
+    width: 20vmax;
+    margin-right: 10px;
+}
+
+.collectionFieldMain{
+   margin-top: 1vmin;
+   width: 80vmax;
+   align-items: center;
+   display: flex;
+   flex-direction: row;
+}
+
+.form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 60vmax;
+    flex-wrap: wrap;
+}
+
+.button {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 5px 0px;
+    width: 10vmax;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 10vmax;
+    border-radius: 6px;
+  }
+
+.input h5{
+    text-align: start;
+}
+
+.input input{
+    width: 20vmax;
+    height: 35px;
+}
+
+.input{
+    margin-right: 40px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+
+.form-check input{
+    width: 20px;
+    height: 20px;
+    margin-right: 40px;
+}

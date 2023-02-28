@@ -1,0 +1,14 @@
+
+.Headermain{
+    height: 15vmin;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.Headermain p{
+    color: white;
+    font-size: 40px;
+}

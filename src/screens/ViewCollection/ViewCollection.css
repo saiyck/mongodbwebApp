@@ -1,0 +1,46 @@
+.listData{
+    margin-top: 2vmax;
+}
+
+.viewList{
+    /* display: flex; */
+    flex-wrap: wrap;
+    margin-inline: 1vmax;
+    padding-inline: 1vmax;
+    padding-top: 1vmax;
+}
+
+.rowss{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* width: 12vmax; */
+
+}
+
+.rowss h4{
+    color: black;
+}
+
+.rowss p{
+    color: black;
+    width: 10vmax;
+}
+
+.columns{
+   display: flex;
+   background-color: #90ee90;
+   padding-inline: 1vmax;
+   padding-top: 1vmax;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   width: 100vmax;
+}
+
+.line{
+    width: 10vmax;
+    background-color: grey;
+    height: 1px;
+    margin-top: 1vmax;
+    margin-bottom: 1vmax;
+}

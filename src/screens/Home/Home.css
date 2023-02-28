@@ -1,0 +1,13 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vmin;
+}
+
+.main button{
+    width: 40vmax;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+}
