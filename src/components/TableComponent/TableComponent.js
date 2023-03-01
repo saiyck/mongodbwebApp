@@ -18,7 +18,7 @@ export default function TableComponent(props) {
                 return <div className='rowss'>
                {ind == 0 &&  <h4>{val[0]}</h4>}   
                {ind == 0 &&  <div className='line'/>}   
-                <p>{typeof val[1]}</p>
+                <p>{val[1]}</p>
               </div>
               }  
              })}
