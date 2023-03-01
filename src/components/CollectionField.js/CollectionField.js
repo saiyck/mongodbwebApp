@@ -123,7 +123,7 @@ export const CollectionField = forwardRef((props, ref) => {
           type == 'select option' ?
             <div className='input'>
               <h5>Option value</h5>
-              <input onChange={(event) => setOptionValues(event.target.value)} placeholder='Please enter' />
+              <input placeholder={'Ex: male,female'} onChange={(event) => setOptionValues(event.target.value)}/>
             </div> : null
         }
 
