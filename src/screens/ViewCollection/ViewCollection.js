@@ -60,7 +60,7 @@ export default function ViewCollection() {
         </div>
 
         <div className='listData'>
-          <div className='viewList'>
+          {/* <div className='viewList'> */}
             {
               data.length > 0 ?  
                 data.map((val,ind)=> {
@@ -80,7 +80,7 @@ export default function ViewCollection() {
                 }) : 
                 <h5>No Found</h5>
             }
-          </div>
+          {/* </div> */}
         </div>
         </div>
         <div className='loader'>

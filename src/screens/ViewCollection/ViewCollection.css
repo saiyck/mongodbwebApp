@@ -1,5 +1,8 @@
 .listData{
     margin-top: 2vmax;
+    width: 100vmax;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .viewList{

@@ -23,6 +23,7 @@ export default function PostCollection() {
   const [finalData,setFinalData] = useState([]);
   const [selectDateFinal,setSelectDateFinal] = useState([]);
   const [loading,setLoading] = React.useState(false);
+  const [errorFields,setErrorFields] = React.useState({});
 
   const options = [
     'one', 'two', 'three'
@@ -42,6 +43,7 @@ const handleCollections= async()=> {
 
 const getCollectionFields = async(name) => {
   setLoading(true)
+  setErrorFields({})
     setSchemaName(name);
   let result = await getCollectionFieldsList(name);
   if(result.status == 200){
@@ -53,7 +55,6 @@ const getCollectionFields = async(name) => {
 }
 
 const onSetData=(value,lable,type)=>{
-  console.log(value,lable,type)
   if(type == 'date'){
     console.log('datess',value.toLocaleDateString())
     console.log(typeof value)
@@ -64,6 +65,29 @@ const onSetData=(value,lable,type)=>{
     return;
   }
   setFinalData({...finalData, [lable]:value});
+}
+
+const validateFields = (data) => {
+  console.log(data,'data')
+  let obj = {}
+  let ent = Object.entries(data)
+  let keys = Object.keys(data)
+   for(let i=0; i< fields.length; i++){
+    if(fields[i].require && !keys.includes(fields[i].lable)){
+       obj[fields[i].lable] = `please enter ${fields[i].lable}`
+    }else if(fields[i].require && ent[i][1] == ''){
+         obj[fields[i].lable] = `please enter ${fields[i].lable}`
+    }
+}
+ setErrorFields(obj)
+ console.log(obj,'obj')
+ console.log(Object.keys(obj).length,'Object.keys(obj).length')
+ console.log(errorFields)
+ if(Object.keys(obj).length){
+  return false
+ }else{
+  return true
+ }
 }
 
 const onHandleSubmit = async() => {
@@ -79,6 +103,9 @@ const onHandleSubmit = async() => {
   })
   fields.name = schemaName;
   fields.data = data
+  let result = validateFields(data);
+  console.log(result,'result')
+  if(result){
   let res = await PostCollectionData(fields);
   if(res.status == 201){
     setList([])
@@ -87,6 +114,7 @@ const onHandleSubmit = async() => {
     alert('data created success fully')
   }else{
     alert('data not created. something went wrong!')
+  }
   }
   setLoading(false)
 }
@@ -118,17 +146,20 @@ const onHandleSubmit = async() => {
             <div className='input1'>
             <h5>{val.lable}</h5>
             <input onChange={(event) => onSetData(event.target.value,val.lable,val.type)} placeholder='Please enter' />
+           { errorFields[val.lable] && <p className='erField'>{errorFields[val.lable]}</p>}
           </div> :
             val.type == 'multi text' ? 
             <div className='input1'>
             <h5>{val.lable}</h5>
             <input onChange={(event) => onSetData(event.target.value,val.lable,val.type)} placeholder='Please enter' />
+            { errorFields[val.lable] && <p className='erField'>{errorFields[val.lable]}</p>}
           </div> :
            val.type == 'date' ? 
            <div className='input1'>
             <h5>{val.lable}</h5>
             {/* <p>{finalData[val.lable]}</p> */}
                <DatePicker selected={finalData[val.lable]} onChange={(date) => onSetData(date,val.lable,val.type)} />
+               { errorFields[val.lable] && <p className='erField'>{errorFields[val.lable]}</p>}
             </div> :
 
            val.type == 'select option' ? 
@@ -136,12 +167,14 @@ const onHandleSubmit = async() => {
            <div className='input1'>
            <h5>{val.lable}</h5>
              <ReactDropdown className='myDroDown' onChange={(data)=> onSetData(data,val.lable,val.type)} options={val.enum} placeholder="Select an option" />
+             { errorFields[val.lable] && <p className='erField'>{errorFields[val.lable]}</p>}
          </div> 
          
          : 
           <div className='input1'>
           <h5>{val.lable}</h5>
           <input onChange={(event) => onSetData(event.target.value,val.lable,val.type)} placeholder='Please enter' />
+          { errorFields[val.lable] && <p className='erField'>{errorFields[val.lable]}</p>}
          </div>
           ))
          }

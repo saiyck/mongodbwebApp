@@ -5,7 +5,7 @@ export default function TableComponent(props) {
   return (
     <div>
     <div className='listData'>
-     <h3 style={{marginLeft:50,marginBottom:-10}}>Name: {item?.schemaName}</h3>   
+     <h3 style={{marginLeft:50,marginBottom:-5}}>Name: {item?.schemaName}</h3>   
       <div className='viewList'>
         {
           item?.data.length > 0 ?  

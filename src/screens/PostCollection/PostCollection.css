@@ -25,7 +25,12 @@
 
 .myDroDown{
     background-color: red;
-    width: 30vmax;
+    width: 50vmax;
+}
+
+.erField{
+    color: red;
+    font-size: 12px;
 }
 
 .submitbutton1 {
