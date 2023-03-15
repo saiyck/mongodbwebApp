@@ -55,6 +55,7 @@ const handleDeleteCall = async() => {
 
 const handleClickUpdateRows = async(name,data) => {
   console.log('update',name,data)
+  setLoading(true)
   let response = await UpdateCollectionFields(name,data);
   if(response && response.status === 201){
     setRowsModal(false)
@@ -64,6 +65,7 @@ const handleClickUpdateRows = async(name,data) => {
     }else{
       dispatch(addAllCollectionListData([]))
     }
+    setLoading(false)
     window.location.reload(true)
   }
 }
