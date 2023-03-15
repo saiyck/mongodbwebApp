@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header'
 import { DeleteCollectionSchema, getCollections } from '../../common/Actions';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import LoadingSpinner from '../../components/Loading/LoadingSpinner';
+import CrudComponent from '../../components/CrudComponent/CrudComponent';
 
 export default function DeleteCollection() {
   const [list,setList] = React.useState([]);
@@ -51,7 +52,7 @@ export default function DeleteCollection() {
         })
        }
      </div>
-     <div className='loader'>
+     <div className='loader'> 
     {loading && <LoadingSpinner/>} 
      </div>
     </div>

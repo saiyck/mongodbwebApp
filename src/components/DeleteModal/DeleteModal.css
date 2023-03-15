@@ -1,0 +1,49 @@
+.deleteModal {
+    position: absolute;
+    flex-direction: column;
+    background-color: white;
+    width: 30vmax;
+    opacity: 1;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px #ccc;
+}
+
+.viewModals {
+    width: 30vmax;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.headerDiv{
+ display: flex;
+ position: absolute;
+ right: 0;
+ top: 0;
+}
+
+.headerDiv button {
+    border-width: 0;
+    background-color: white;
+    font-size: 18;
+}
+
+.bodyDiv {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.footerDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 15vmax;
+    margin-top: 30px;
+}
+
+.footerDiv button{
+    background-color: green;
+    color: white;
+}

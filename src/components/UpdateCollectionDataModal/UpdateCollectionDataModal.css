@@ -1,0 +1,13 @@
+.listDataa {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.dropupdate {
+    width: 185px;
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: left;
+    font-weight: 600;
+}

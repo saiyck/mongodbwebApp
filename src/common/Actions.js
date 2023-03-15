@@ -26,6 +26,16 @@ export const DeleteCollectionSchema = async(name)=> {
    return result;
 }
 
+export const DeleteCollectionFields = async(name,data)=> {
+    let result = await getAPI(`${END_POINTS.Delete_Collection_Fields}?schema=${name}`,'DELETE',data)
+    return result;
+}
+
+export const DeleteCollectionData = async(id,name)=> {
+    let result = await getAPI(`/schema/delete/${id}?schema=${name}`,'DELETE',null)
+    return result;
+}
+
 export const GetAllViewData = async(name)=> {
     let result = await getAPI(`/schema/getAll/data?name=${name}`,'GET',null);
     return result;
@@ -33,6 +43,16 @@ export const GetAllViewData = async(name)=> {
 
 export const GetCollectionViewData = async()=> {
     let result = await getAPI(END_POINTS.All_Collection_View_list,'GET',null);
+    return result;
+}
+
+export const UpdateCollectionFields = async(name,data)=> {
+    let result = await getAPI(`${END_POINTS.Update_Collection_Fields}?schema=${name}`,'PATCH',data)
+    return result;
+}
+
+export const UpdateCollectionData = async(id,name,data) => {
+    let result = await getAPI(`${END_POINTS.Update_Collection_Data}/${id}?schema=${name}`,'PATCH',data)
     return result;
 }
 

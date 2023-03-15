@@ -1,0 +1,8 @@
+.textBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.textBox  input {
+    margin-top: 10px;
+}

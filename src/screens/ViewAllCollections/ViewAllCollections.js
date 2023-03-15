@@ -30,10 +30,10 @@ setLoading(false)
      <Header title={'All Collections'}/>
     </header>
      <div className='createScheme'>
-        {
+        { allData.length >0 ?
          allData.map((val,ind)=>{
             return  <TableComponent item={val}/>
-         })
+         }) : <div>No Data Found</div>
         }
      </div>
      <div className='loader'>

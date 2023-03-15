@@ -1,0 +1,43 @@
+.AppTable {
+     width: 100vmax; 
+    /* height: 100vh; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    }
+    
+table {
+    border: 2px solid forestgreen;
+    width: 90vmax; 
+    /* height: 200px; */
+    }
+    
+th{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    text-align: center;
+    }
+    
+td {
+    border-right: 1px solid black; 
+    border-bottom: 1px solid black;
+    text-align: center;
+    height: 60px;
+    }
+
+ .actionRow {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    margin-top: 10px;
+ }
+
+ .actionRow p{
+    text-align: center;
+ }
+ 
+ .actionButtons{
+    margin-left: 10px;
+ }
+    

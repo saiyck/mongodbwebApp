@@ -14,6 +14,9 @@ export default function Home() {
       <Link to={'/create'}>
       <Button variant="primary">Create Collection</Button>
       </Link>
+      <Link to={'/crud'}>
+      <Button variant="primary">Crud Collection</Button>
+      </Link>
       <Link to={'/post'}>
       <Button variant="primary">Post Collection</Button>
       </Link>
@@ -25,6 +28,9 @@ export default function Home() {
       </Link>
       <Link to={'viewall'}>
       <Button variant="primary">View All Collection</Button>
+      </Link>
+      <Link to={'example'}>
+      <Button variant="primary">Example</Button>
       </Link>
     </div>
     </div>

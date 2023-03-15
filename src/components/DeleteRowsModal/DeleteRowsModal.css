@@ -1,0 +1,8 @@
+.listView{
+    display: flex;
+    flex-direction: column;
+}
+
+.checkBoxView {
+    margin-right: -40px;
+}
