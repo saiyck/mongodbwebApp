@@ -1,6 +1,6 @@
 
-//export const BASE_URL = 'https://userapis.onrender.com';
-export const BASE_URL = 'http://localhost:3001'
+export const BASE_URL = 'https://userapis.onrender.com';
+//export const BASE_URL = 'http://localhost:3001'
 
 export const END_POINTS = {
     Get_Collections : '/schema/list',
