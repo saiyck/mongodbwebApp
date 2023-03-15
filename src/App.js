@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter,Router } from "react-router-dom";
 import Home from '../src/screens/Home/Home'
 import PostCollection from '../src/screens/PostCollection/PostCollection'
 import DeleteCollection from '../src/screens/DeleteCollection/DeleteCollection'
@@ -14,7 +14,7 @@ function App() {
   return (
     <Provider store={Store}>
     <BrowserRouter>
-    <Routes>
+    <Routes>  
         <Route path="/" element={<Home />}> </Route>
         <Route path="create" element={<CreateCollection />}> </Route>
         <Route path="crud" element={<CrudCollections />}> </Route>
