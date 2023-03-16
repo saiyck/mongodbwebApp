@@ -51,7 +51,7 @@ export default function CreateCollection() {
          console.log('data',data)
        let result = await createCollection(data);
        console.log('result',result);
-       if(result){
+       if(result.status == 201){
         setListFields([obj])
         alert('Schema created successfully')
        }else{
