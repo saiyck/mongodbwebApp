@@ -124,10 +124,10 @@ const handleUpdateCollectionData = async(name,data) => {
                   setUpdateCollectionModal(true)
                   setUpdateData(val)
                 }} size={18} className='iconButton' style={{marginRight:20,marginLeft:5}} color='black'/>    
-                <FaRegTrashAlt onClick={()=>{ 
+                <FaRegTrashAlt opacity={ key == 0 ? 0.5 : 1} onClick={ key != 0 ? ()=>{ 
                   setDeleteColumnData(val)
                   setOpenDeleteModal(true)
-              }} className='iconButton' style={{marginRight:5,marginLeft:5}} color='black'/>
+              } : null} className='iconButton' style={{marginRight:5,marginLeft:5}} color='black'/>
           </div>
             </td>  
           </tr>

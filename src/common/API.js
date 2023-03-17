@@ -1,15 +1,32 @@
 import axios from 'axios';
 import { BASE_URL } from './URLs';
 
+export const deleteAPI = async(url)=> {
+  let finalurl = BASE_URL + url;
+  console.log('url',finalurl )
+  return new Promise((resolve, reject)=> {
+    axios.delete(finalurl)
+  .then((response)=>{
+    console.log('response',response)
+    resolve(response.data)
+  })
+  .catch((err)=> {
+    console.log('error',err)
+    reject(null)
+  })
+  })
+}
+
 export const getAPI= async (url,method,data)=>{
     const headers = {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
       };
       
   let reqParams = {
     url : BASE_URL+url,
-    method,
-    headers
+    method
   }
 
   if(data){

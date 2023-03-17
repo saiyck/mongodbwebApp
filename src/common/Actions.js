@@ -1,4 +1,4 @@
-import { getAPI } from "./API";
+import { deleteAPI, getAPI } from "./API";
 import { END_POINTS } from "./URLs";
 
 export const getCollections = async() => {
@@ -23,6 +23,7 @@ export const PostCollectionData = async(data) => {
 
 export const DeleteCollectionSchema = async(name)=> {
    let result = await getAPI(`/schema/${name}`,'DELETE',null);
+// let result =  await deleteAPI(`/schema/${name}`)
    return result;
 }
 

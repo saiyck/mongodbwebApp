@@ -26,24 +26,28 @@ export default function CreateCollection() {
 
 
   const handleSubmitData= async ()=> {
-    setLoading(true)
     console.log('refs',rfs)
     if(schemeName == ''){
+      setLoading(false)
       setSchemaError('Please enter schema')
+      return;
     }
     const finalFields = []
+
       for(let i=0;i<listFields.length;i++){
         let data = rfs[i].returnValues();
         console.log('data',data);
        let res = rfs[i].validateFields();
+       console.log('ress',res)
        if(res){
         finalFields.push(data);
        }else{
-        alert('require fields are mandatory')
+        console.log('require fields are mandatory')
        }
       }
 
       if(listFields.length == finalFields.length){
+        setLoading(true)  
          const data = {
             schemaName : schemeName,
             fields: finalFields
