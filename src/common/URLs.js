@@ -1,7 +1,7 @@
 
-export const BASE_URL = "https://userapi-alpha.vercel.app";
+// export const BASE_URL = "https://userapi-vert.vercel.app";
 // export const BASE_URL = 'http://localhost:3001'
-
+export const BASE_URL = 'https://userapis.onrender.com'
 export const END_POINTS = {
     Get_Collections : '/schema/list',
     Get_Collection_Fields : '/schema/fields',

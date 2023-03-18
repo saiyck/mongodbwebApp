@@ -33,7 +33,7 @@ export const getAPI= async (url,method,data)=>{
   }
 
   console.log('requestParams',reqParams)
-  let result=await axios(reqParams,{withCredentials: true})
+  let result=await axios(reqParams)
   .then((response)=>{
     console.log('response',response)
     return response.data;
