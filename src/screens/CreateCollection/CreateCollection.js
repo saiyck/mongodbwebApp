@@ -21,12 +21,10 @@ export default function CreateCollection() {
 
    React.useEffect(()=>{
     rfs.push(childCompRef)
-    console.log('ref',childCompRef);
    },[])
 
 
   const handleSubmitData= async ()=> {
-    console.log('refs',rfs)
     if(schemeName == ''){
       setLoading(false)
       setSchemaError('Please enter schema')
@@ -36,13 +34,11 @@ export default function CreateCollection() {
 
       for(let i=0;i<listFields.length;i++){
         let data = rfs[i].returnValues();
-        console.log('data',data);
        let res = rfs[i].validateFields();
-       console.log('ress',res)
        if(res){
         finalFields.push(data);
        }else{
-        console.log('require fields are mandatory')
+        console.log('required fields are mandatory')
        }
       }
 
@@ -52,14 +48,12 @@ export default function CreateCollection() {
             schemaName : schemeName,
             fields: finalFields
          }
-         console.log('data',data)
        let result = await createCollection(data);
-       console.log('result',result);
        if(result.status == 201){
         setListFields([obj])
-        alert('Schema created successfully')
+        alert('schema created successfully!')
        }else{
-        alert('Schema not create')
+        alert('something went wrong! schema not created')
        }
       }
       setLoading(false)

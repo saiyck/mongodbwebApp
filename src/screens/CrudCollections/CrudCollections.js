@@ -50,8 +50,8 @@ setLoading(false)
       { allData.length > 0 ?
       allData.map((val,ind)=> {
        return (
-        <div key={ind}>
-          <CrudComponent setLoading={setLoading} GetAllCollectionData={()=>getAllCollections()} item={val}/>
+        <div>
+          <CrudComponent getAllCollections={()=> getAllCollections()} setLoading={setLoading} GetAllCollectionData={()=>getAllCollections()} item={val}/>
         </div>
        )
       }) : <div style={{textAlign:'center',marginTop:30}}>No Data Found</div>

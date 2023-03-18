@@ -10,7 +10,7 @@ import DeleteRowsModal from '../DeleteRowsModal/DeleteRowsModal';
 import UpdateCollectionDataModal from '../UpdateCollectionDataModal/UpdateCollectionDataModal';
 
 export default function CrudComponent(props) {
-    const {item,setLoading} = props;
+    const {item,setLoading,getAllCollections} = props;
     const [listData,setListData] = useState([]);
     const [rows,setRows] = useState([]);
     const [openDeleteModal,setOpenDeleteModal] = useState(false);
@@ -25,7 +25,7 @@ export default function CrudComponent(props) {
 
 useEffect(()=> {
    setData()
-},[])
+},[item])
 
 const setData = () => {
    let dataList = [...item.data];
@@ -45,50 +45,46 @@ const setData = () => {
 const handleDeleteCall = async() => {
   setLoading(true)
   let res = await DeleteCollectionData(deleteColumData._id,item.schemaName);
-  console.log('resss',res);
   if(res.status === 204){
-    window.location.reload(true)
+    getAllCollections()
   } 
   setOpenDeleteModal(false)
   setLoading(false)
 }
 
 const handleClickUpdateRows = async(name,data) => {
-  console.log('update',name,data)
   setLoading(true)
   let response = await UpdateCollectionFields(name,data);
   if(response && response.status === 201){
     setRowsModal(false)
-    let result = await GetCollectionViewData();
-    if(result){
-      dispatch(addAllCollectionListData(result))
-    }else{
-      dispatch(addAllCollectionListData([]))
-    }
-    setLoading(false)
-    window.location.reload(true)
+    getAllCollections()
+  }else{
+    alert("something went wrong! please try again")
   }
+  setLoading(false)
 }
 
 const handleDeleteRows = async(name,data) => {
   setLoading(true)
   let res = await DeleteCollectionFields(name,data);
-  console.log('deletefieldss',res)
   if(res?.status === 201){
-    window.location.reload(true)
+    getAllCollections()
+    setDeleteRowsModal(false)
+  }else{
+    alert("something went wrong! please try again")
   }
-  setDeleteRowsModal(false)
   setLoading(false)
 }
 
 const handleUpdateCollectionData = async(name,data) => {
   setLoading(true)
   let res  = await UpdateCollectionData(updateData._id,name,data);
-  console.log('updateRes',res)
   if(res?.status === 204){
-    window.location.reload(true)
+    getAllCollections()
+    setUpdateCollectionModal(false)
+  }else{
+    alert("something went wrong! please try again")
   }
- setUpdateCollectionModal(false)
  setLoading(false)
 }
 

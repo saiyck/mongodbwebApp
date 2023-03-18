@@ -50,16 +50,10 @@ const getCollectionFields = async(name) => {
     let fieldsList = result.fields;
     setFields(fieldsList);
   }
-  console.log('result',result)
   setLoading(false)
 }
 
 const onSetData=(value,lable,type)=>{
-  if(type == 'date'){
-    console.log('datess',value.toLocaleDateString())
-    console.log(typeof value)
-  }
-
   if(type == 'select option') {
     setFinalData({...finalData, [lable]:value.label});
     return;
@@ -68,7 +62,6 @@ const onSetData=(value,lable,type)=>{
 }
 
 const validateFields = (data) => {
-  console.log(data,'data')
   let obj = {}
   let ent = Object.entries(data)
   let keys = Object.keys(data)
@@ -104,16 +97,15 @@ const onHandleSubmit = async() => {
   fields.name = schemaName;
   fields.data = data
   let result = validateFields(data);
-  console.log(result,'result')
   if(result){
   let res = await PostCollectionData(fields);
   if(res.status == 201){
     setList([])
     setFields([])
     handleCollections()
-    alert('data created success fully')
+    alert('data created successfully!')
   }else{
-    alert('data not created. something went wrong!')
+    alert('something went wrong! data not created')
   }
   }
   setLoading(false)
@@ -158,7 +150,7 @@ const onHandleSubmit = async() => {
            <div className='input1'>
             <h5>{val.lable}</h5>
             {/* <p>{finalData[val.lable]}</p> */}
-               <DatePicker selected={finalData[val.lable]} onChange={(date) => onSetData(date,val.lable,val.type)} />
+               <DatePicker placeholderText='Please select' selected={finalData[val.lable]} onChange={(date) => onSetData(date,val.lable,val.type)} />
                { errorFields[val.lable] && <p className='erField'>{errorFields[val.lable]}</p>}
             </div> :
 

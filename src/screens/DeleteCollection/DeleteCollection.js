@@ -27,9 +27,9 @@ export default function DeleteCollection() {
     let res = await DeleteCollectionSchema(name);
     if(res.status === 200){
       handleCollections();
-      alert('collection was deleted')
+      alert('collection was deleted!')
     }else{
-      alert('failed to delete collection')
+      alert('failed to delete collection!')
     }
     setLoading(false)
   }
