@@ -19,14 +19,13 @@ export const deleteAPI = async(url)=> {
 
 export const getAPI= async (url,method,data)=>{
     const headers = {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+        "Content-Type": "application/json"
       };
       
   let reqParams = {
     url : BASE_URL+url,
-    method
+    method,
+    headers
   }
 
   if(data){
@@ -34,7 +33,7 @@ export const getAPI= async (url,method,data)=>{
   }
 
   console.log('requestParams',reqParams)
-  let result=await axios(reqParams)
+  let result=await axios(reqParams,{withCredentials: true})
   .then((response)=>{
     console.log('response',response)
     return response.data;

@@ -1,5 +1,5 @@
 
-export const BASE_URL = "https://userapi-ten.vercel.app";
+export const BASE_URL = "https://userapi-alpha.vercel.app";
 // export const BASE_URL = 'http://localhost:3001'
 
 export const END_POINTS = {
