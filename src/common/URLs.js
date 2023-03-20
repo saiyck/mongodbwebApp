@@ -1,5 +1,5 @@
 
- export const BASE_URL = "https://userapi-omega.vercel.app"
+ export const BASE_URL = "https://userapi-1rx6y31d6-saiyck.vercel.app"
 // export const BASE_URL = 'http://localhost:3001'
 //export const BASE_URL = 'https://userapis.onrender.com'
 export const END_POINTS = {
