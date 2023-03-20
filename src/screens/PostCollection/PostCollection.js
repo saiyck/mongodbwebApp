@@ -20,7 +20,7 @@ export default function PostCollection() {
   const [value,setValue] = React.useState('');
   const [list,setList] = React.useState([]);
   const [schemaName,setSchemaName] = useState('Please select');
-  const [finalData,setFinalData] = useState([]);
+  const [finalData,setFinalData] = useState({});
   const [selectDateFinal,setSelectDateFinal] = useState([]);
   const [loading,setLoading] = React.useState(false);
   const [errorFields,setErrorFields] = React.useState({});
@@ -41,13 +41,23 @@ const handleCollections= async()=> {
   setLoading(false)
 }
 
+const setInValues = (listData) => {
+  let obj={}
+    for (let i=0;i< listData.length; i++){
+      obj[listData[i].lable] = ""
+    }
+    setFinalData(obj)
+}
+
 const getCollectionFields = async(name) => {
   setLoading(true)
   setErrorFields({})
     setSchemaName(name);
   let result = await getCollectionFieldsList(name);
+  console.log('fields',result)
   if(result.status == 200){
     let fieldsList = result.fields;
+    setInValues(fieldsList);
     setFields(fieldsList);
   }
   setLoading(false)
